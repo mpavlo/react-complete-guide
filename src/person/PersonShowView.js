@@ -1,10 +1,12 @@
 import React from 'react';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const PersonShowView = props => {
   return (
     <div>
       {props.person.firstName} {props.person.lastName} {props.person.age}
-      <input type="button" onClick={props.onToEdit} value="edit" />
+      <a href onClick={props.onToEdit}><FontAwesomeIcon icon="edit" /></a>
+
     </div>
   );
 };

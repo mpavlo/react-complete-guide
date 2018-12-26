@@ -3,13 +3,17 @@ import './App.css';
 import PersonShowView from "./person/PersonShowView";
 import PersonEditView from "./person/PersonEditView";
 import PersonCreateView from "./person/PersonCreateView";
-
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
 class App extends Component {
-
-  state = {
-    persons: [],
-    views: []
-  };
+  constructor() {
+    super();
+    this.state = {
+      persons: [],
+      views: []
+    };
+    library.add(faEdit)
+  }
 
   onEdit = (person, index) => {
     const persons = [...this.state.persons];
@@ -88,7 +92,7 @@ class App extends Component {
     return (
       <div className="App">
         <input type="button" value="Neue Person erstellen" onClick={this.onToCreate}/>
-        <ul>{personViews}</ul>
+        <ul class="person-view">{personViews}</ul>
       </div>
     );
   }

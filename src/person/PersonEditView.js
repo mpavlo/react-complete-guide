@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const PersonEditView = (props) => {
   return (
@@ -10,7 +11,7 @@ const PersonEditView = (props) => {
       Alter: <input type="text" name="age" value={props.person.age}
                     onChange={(event) => props.onChangeField(event, "age")} />
 
-      <input type="button" onClick={props.onEdit} value="edit" />
+      <a href onClick={props.onEdit}><FontAwesomeIcon icon="edit" /></a>
     </div>
   )
 };
